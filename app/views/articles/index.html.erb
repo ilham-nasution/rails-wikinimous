@@ -1,0 +1,20 @@
+<ul class="list-unstyled">
+<% @articles.each do |article| %>
+<%= link_to article_path(article.id), method: :get, class: 'text-decoration-none text-body' do %>
+  <li class="media mb-3">
+    <img src="https://cdn.pixabay.com/photo/2016/02/18/13/32/darth-vader-1207142_1280.jpg" width="100px" class="mr-3 rounded" alt="image">
+    <div class="media-body">
+      <div class="d-flex justify-content-between">
+      <h5 class="mt-0 mb-1"><%= article.title %></h5>
+      <%= link_to article_path(article.id), method: :delete, class: 'text-danger' do%>
+        <i class="fas fa-trash"></i>
+      <% end %>
+      </div>
+      <%= article.content %>
+    </div>
+  </li>
+<% end %>
+<% end %>
+</ul>
+
+
